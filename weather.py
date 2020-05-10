@@ -52,7 +52,7 @@ def AirportWeather(Airport, APIKey):
 def main():
 
 	airportName = "Aero B Ranch Airporta"
-	APIKey = 
+	APIKey = "f8f8eae96c8a82ebcd0b7e784460fe8f"
 	rtn = AirportWeather(airportName, APIKey)
 	print(rtn)
 
