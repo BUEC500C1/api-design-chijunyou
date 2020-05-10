@@ -34,16 +34,21 @@ def AirportWeather(Airport, APIKey):
 		rtn.append("fail to load weather information")
 		return rtn
 
+	try:
 	
-	for i in range (0,9):
-		weatherinformation = list()
-		time = jsonfile['list'][i]["dt_txt"]
-		temperature = int(float(jsonfile['list'][i]['main']['temp']) - 273)
-		weather = jsonfile['list'][i]['weather'][0]['main']
-		weatherinformation.append(time)
-		weatherinformation.append(temperature)
-		weatherinformation.append(weather)
-		rtn.append(weatherinformation)
+			for i in range (0,9):
+				weatherinformation = list()
+				time = jsonfile['list'][i]["dt_txt"]
+				temperature = int(float(jsonfile['list'][i]['main']['temp']) - 273)
+				weather = jsonfile['list'][i]['weather'][0]['main']
+				weatherinformation.append(time)
+				weatherinformation.append(temperature)
+				weatherinformation.append(weather)
+				rtn.append(weatherinformation)
+	except:
+		rtn.append(0)
+		rtn.append("fail to load weather information")
+		return rtn
 
 
 
@@ -51,7 +56,7 @@ def AirportWeather(Airport, APIKey):
 
 def main():
 
-	airportName = "Aero B Ranch Airporta"
+	airportName = "Watts Field"
 	APIKey = "f8f8eae96c8a82ebcd0b7e784460fe8f"
 	rtn = AirportWeather(airportName, APIKey)
 	print(rtn)
