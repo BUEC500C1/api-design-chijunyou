@@ -11,4 +11,5 @@ def testcase():
 	assert AirportWeather("vafdvav", key)[1] == "airportName is wrong."
 	assert AirportWeather("Watts Field", 'wrongkey')[0] == 0
 	assert AirportWeather("Watts Field", 'wrongkey')[1] == "fail to load weather information"
+	assert type(AirportWeather("Watts Field", key)[0]) != int
 
